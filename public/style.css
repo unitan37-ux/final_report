@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/* 全体の設定（背景を黒、文字を白） */
+body {
+    background-color: #111;
+    color: #eee;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* ページタイトル（クリーチャー名） */
+h1 {
+    color: #d4af37; /* 金色 */
+    border-bottom: 2px solid #555;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+/* リンクの色 */
+a { color: #8cf; text-decoration: none; }
+
+/* === 表のデザイン（ここが重要！） === */
+table {
+    width: 100%;             /* 横幅いっぱいに */
+    max-width: 600px;        /* 広がりすぎないように制限 */
+    margin: 0 auto 30px auto; /* 中央寄せ */
+    border-collapse: collapse; /* 枠線を重ねる（隙間をなくす） */
+    font-size: 1.1em;        /* 文字を少し大きく */
+}
+
+/* 表の枠線と余白 */
+th, td {
+    border: 1px solid #888;  /* グレーの枠線 */
+    padding: 15px;           /* 文字の周りの余白 */
+    text-align: left;        /* 左寄せ */
+}
+
+/* 左側の項目名（カード名、種類など） */
+th {
+    background-color: #333;  /* 濃いグレー背景 */
+    color: #ccc;             /* 薄いグレー文字 */
+    width: 30%;              /* 幅を指定 */
+    font-weight: normal;
+}
+
+/* 右側のデータ（ニンジャ、無属性など） */
+td {
+    background-color: #1a1a1a; /* 黒っぽい背景 */
+}
+
+/* ボタンのデザイン */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #444;
+    color: #fff;
+    border: 1px solid #888;
+    margin: 5px;
+    cursor: pointer;
+}
+.btn-delete { background: #600; }

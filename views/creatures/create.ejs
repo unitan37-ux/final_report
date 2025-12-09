@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>新規登録</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <style>
+        /* フォーム用の追加スタイル */
+        body { text-align: center; }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        label { display: block; margin-bottom: 10px; font-weight: bold; }
+        input[type="text"], input[type="number"], textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box; /* 枠線を含めて幅を計算 */
+            margin-top: 5px;
+        }
+        textarea { height: 80px; }
+        .submit-btn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 30px;
+            border: none;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0;
+        }
+        .submit-btn:hover { background-color: #555; }
+    </style>
+</head>
+<body>
+    <h1>クリーチャー新規登録</h1>
+    
+    <form action="/creatures/create" method="POST">
+        <label>名前: <input type="text" name="name" required></label>
+        <label>レアリティ: <input type="text" name="rarity" placeholder="N, R, S, E..."></label>
+        <label>属性: <input type="text" name="element" placeholder="無, 火, 水, 地, 風..."></label>
+        <label>コスト: <input type="text" name="cost" placeholder="例: 80G"></label>
+        
+        <div style="display: flex; gap: 10px;">
+            <label style="flex:1;">ST: <input type="number" name="st"></label>
+            <label style="flex:1;">HP: <input type="number" name="hp"></label>
+        </div>
+
+        <label>アイテム制限: <input type="text" name="item_limit" value="なし"></label>
+        <label>特殊能力: <textarea name="ability"></textarea></label>
+        <label>特記事項(メモ): <textarea name="memo"></textarea></label>
+        
+        <label>解説: <textarea name="description"></textarea></label>
+        
+        <label>使用メモ: <textarea name="usage_note" placeholder="使い方のコツなどを記入"></textarea></label>
+
+        <input type="submit" value="登録" class="submit-btn">
+    </form>
+    
+    <p style="margin-top: 20px;">
+        <a href="/creatures">一覧に戻る</a>
+    </p>
+</body>
+</html>

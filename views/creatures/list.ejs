@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>マイ・クリーチャー図鑑</title>
+    <style>
+        /* --- 共通デザイン設定 --- */
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* --- タイトル --- */
+        h1 {
+            color: #333333;
+            border-bottom: 2px solid #333333;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        /* --- 一覧表のデザイン --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            font-size: 1em;
+        }
+
+        th, td {
+            border: 1px solid #999999;
+            padding: 10px;
+        }
+
+        /* ヘッダー（項目名） */
+        th {
+            background-color: #f5f5f5;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* データ行 */
+        td {
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        /* 行ホバー */
+        tr:hover td {
+            background-color: #fafafa;
+        }
+
+        /* カード名は左寄せ */
+        .name-cell {
+            text-align: left;
+        }
+
+        /* --- リンクとボタン --- */
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #eeeeee;
+            color: #333;
+            border: 1px solid #999;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .btn:hover { background-color: #dddddd; }
+
+        .nav-area {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>マイ・クリーチャー図鑑</h1>
+        
+        <div class="nav-area">
+            <a href="/" class="btn">トップメニュー</a>
+            <a href="/creatures/create" class="btn">＋ 新規登録</a>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 50px;">No.</th>
+                    <th>カード名 (クリックで詳細)</th>
+                    <th style="width: 80px;">属性</th>
+                    <th style="width: 100px;">コスト</th>
+                    <th style="width: 100px;">ST / HP</th>
+                    <th style="width: 60px;">レア</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach((item, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    
+                    <td class="name-cell">
+                        <a href="/creatures/detail/<%= item.id %>" style="font-weight: bold; font-size: 1.1em;">
+                            <%= item.name %>
+                        </a>
+                    </td>
+                    
+                    <td><%= item.element %></td>
+                    <td><%= item.cost %></td>
+                    <td><%= item.st %> / <%= item.hp %></td>
+                    <td><%= item.rarity %></td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
