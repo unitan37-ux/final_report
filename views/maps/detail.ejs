@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title><%= map.map_name %>の詳細</title>
+    <style>
+        /* --- 基本設定 --- */
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            border: 1px solid #cccccc;
+            padding: 30px;
+            background-color: #ffffff;
+        }
+
+        /* --- マップ名 --- */
+        h1 {
+            color: #333333;
+            border-bottom: 2px solid #333333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        /* --- 表のデザイン --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        th, td {
+            border: 1px solid #999999;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+            width: 30%;
+            font-weight: normal;
+        }
+
+        td {
+            background-color: #ffffff;
+        }
+
+        /* --- ボタン類 --- */
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #eeeeee;
+            color: #333;
+            border: 1px solid #999;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .btn:hover { background-color: #dddddd; }
+        
+        .btn-delete {
+            background-color: #fff0f0;
+            color: #cc0000;
+            border-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1><%= map.map_name %></h1>
+
+        <table>
+            <tr>
+                <th>マップ名</th>
+                <td><%= map.map_name %></td>
+            </tr>
+            <tr>
+                <th>目標魔力</th>
+                <td><%= map.target_g %> G</td>
+            </tr>
+            <tr>
+                <th>構造の特徴</th>
+                <td><%= map.structure %></td>
+            </tr>
+            <tr>
+                <th>属性傾向</th>
+                <td><%= map.element_trend %></td>
+            </tr>
+            <tr>
+                <th>おすすめカード</th>
+                <td><%= map.recommended_card %></td>
+            </tr>
+            <tr>
+                <th>攻略メモ</th>
+                <td style="white-space: pre-wrap; color: #555;"><%= map.strategy %></td>
+            </tr>
+        </table>
+
+        <div>
+            <a href="/maps/edit/<%= map.id %>" class="btn">編集</a>
+            
+            <form action="/maps/delete/<%= map.id %>" method="POST" style="display:inline;" onsubmit="return confirm('本当に削除しますか？');">
+                <input type="submit" value="消去" class="btn btn-delete">
+            </form>
+        </div>
+
+        <p style="margin-top: 20px;">
+            <a href="/maps">一覧に戻る</a>
+        </p>
+    </div>
+
+</body>
+</html>

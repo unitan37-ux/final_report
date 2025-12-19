@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>レビュー新規登録</title>
+    <style>
+        /* フォーム用のスタイル */
+        body { text-align: center; font-family: "Yu Mincho", serif; }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        label { display: block; margin-bottom: 10px; font-weight: bold; }
+        input[type="text"], input[type="number"], textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+        textarea { height: 80px; }
+        .submit-btn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 30px;
+            border: none;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0;
+        }
+        .submit-btn:hover { background-color: #555; }
+    </style>
+</head>
+<body>
+    <h1>レビュー新規登録</h1>
+    
+    <form action="/reviews/create" method="POST">
+        <label>作品名: <input type="text" name="title" required></label>
+        <label>ハード: <input type="text" name="hardware"></label>
+        
+        <div style="display: flex; gap: 10px;">
+            <label style="flex:1;">発売年: <input type="number" name="release_year"></label>
+            <label style="flex:1;">点数 (0-100): <input type="number" name="score"></label>
+        </div>
+
+        <label>レビュータイトル: <input type="text" name="review_title"></label>
+        <label>詳細コメント: <textarea name="comment" placeholder="感想や評価を記入"></textarea></label>
+
+        <input type="submit" value="登録" class="submit-btn">
+    </form>
+    
+    <p style="margin-top: 20px;">
+        <a href="/reviews">一覧に戻る</a>
+    </p>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>マイ・クリーチャー図鑑</title>
+    <title>マップ攻略メモ一覧</title>
     <style>
         /* --- 共通デザイン設定 --- */
         body {
@@ -60,7 +60,7 @@
             background-color: #fafafa;
         }
 
-        /* カード名は左寄せ */
+        /* マップ名は左寄せ */
         .name-cell {
             text-align: left;
         }
@@ -90,39 +90,37 @@
 <body>
 
     <div class="container">
-        <h1>マイ・クリーチャー図鑑</h1>
+        <h1>マップ攻略メモ</h1>
         
         <div class="nav-area">
             <a href="/" class="btn">トップメニュー</a>
-            <a href="/creatures/create" class="btn">＋ 新規登録</a>
+            <a href="/maps/create" class="btn">＋ 新規登録</a>
         </div>
 
         <table>
             <thead>
                 <tr>
                     <th style="width: 50px;">No.</th>
-                    <th>カード名</th>
-                    <th style="width: 80px;">属性</th>
-                    <th style="width: 100px;">コスト</th>
-                    <th style="width: 100px;">ST / HP</th>
-                    <th style="width: 60px;">レア</th>
+                    <th>マップ名</th>
+                    <th style="width: 120px;">目標魔力</th>
+                    <th style="width: 150px;">構造の特徴</th>
+                    <th>おすすめカード</th>
                 </tr>
             </thead>
             <tbody>
-                <% data.forEach((item, index) => { %>
+                <% maps.forEach((map, index) => { %>
                 <tr>
                     <td><%= index + 1 %></td>
                     
                     <td class="name-cell">
-                        <a href="/creatures/detail/<%= item.id %>" style="font-weight: bold; font-size: 1.1em;">
-                            <%= item.name %>
+                        <a href="/maps/detail/<%= map.id %>" style="font-weight: bold; font-size: 1.1em;">
+                            <%= map.map_name %>
                         </a>
                     </td>
                     
-                    <td><%= item.element %></td>
-                    <td><%= item.cost %></td>
-                    <td><%= item.st %> / <%= item.hp %></td>
-                    <td><%= item.rarity %></td>
+                    <td><%= map.target_g %> G</td>
+                    <td><%= map.structure %></td>
+                    <td><%= map.recommended_card %></td>
                 </tr>
                 <% }) %>
             </tbody>
