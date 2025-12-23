@@ -16,6 +16,7 @@ let creatures = [
     {
         id: 1,
         name: "ニンジャ",
+        work: "カルドセプト セカンド エキスパンション",
         rarity: "S",
         element: "無",
         cost: "G80",
@@ -30,6 +31,7 @@ let creatures = [
     {
         id: 2,
         name: "オールドウィロウ",
+        work: "カルドセプト セカンド エキスパンション",
         rarity: "R",
         element: "火",
         cost: "G40+火土地2",
@@ -44,6 +46,7 @@ let creatures = [
     {
         id: 3,
         name: "フェイト",
+        work: "カルドセプト セカンド エキスパンション",
         rarity: "S",
         element: "水",
         cost: "G60",
@@ -58,6 +61,7 @@ let creatures = [
     {
         id: 4,
         name: "バルキリー ",
+        work: "カルドセプト セカンド エキスパンション",
         rarity: "S",
         element: "火",
         cost: "G70+火土地1",
@@ -72,6 +76,7 @@ let creatures = [
     {
         id: 5,
         name: "コーンフォーク",
+        work: "カルドセプト セカンド エキスパンション",
         rarity: "N",
         element: "風",
         cost: "G70",
@@ -86,6 +91,7 @@ let creatures = [
     {
         id: 6,
         name: "マッドマン",
+        work: "カルドセプト セカンド エキスパンション",
         rarity: "S",
         element: "地",
         cost: "G65",
@@ -100,6 +106,7 @@ let creatures = [
     {
         id: 7,
         name: "パウダーイーター",
+        work: "カルドセプト セカンド エキスパンション",
         rarity: "S",
         element: "風",
         cost: "G0",
@@ -114,6 +121,7 @@ let creatures = [
     {
         id: 8,
         name: "リトルグレイ",
+        work: "カルドセプト セカンド エキスパンション",
         rarity: "R",
         element: "無",
         cost: "G50+生贄",
@@ -128,6 +136,7 @@ let creatures = [
     {
         id: 9,
         name: "アヌビアス",
+        work: "カルドセプト セカンド エキスパンション",
         rarity: "S",
         element: "水",
         cost: "G70+水土地1",
@@ -142,6 +151,7 @@ let creatures = [
     {
         id: 10,
         name: "カーバンクル",
+        work: "カルドセプト セカンド エキスパンション",
         rarity: "N",
         element: "地",
         cost: "G20",
@@ -152,21 +162,193 @@ let creatures = [
         memo: "■援護 = 手札のクリーチャーカードをアイテムとして使用できる",
         description: "額の光り輝く鏡は、全ての魔力を反射する。臆病でめったに姿を見せない。",
         usage_note: "ドラゴンフライを援護クリーチャーとして使用すると、合体してカーバンフライになるため，火属性と地属性のブックに入れると面白い"
-    }
+    },
+    {
+        id: 11,
+        name: "サンクダムカード",
+        work: "カルドセプト セカンド エキスパンション",
+        rarity: "E",
+        element: "無",
+        cost: "G70",
+        st: 40,
+        hp: 40,
+        item_limit: "なし",
+        ability: "先制 : 対戦相手を破壊した場合、使用者は戦闘が行われた領地と同じ属性の護符を5得る",
+        memo: "■先制 = 防御側でも先手を取って攻撃することができる",
+        description: "聖域の守護者。聖域へ侵入するものを処罰するためにソルティス神が創り出した。その杖に打たれたものは悔い改め、神への信心を誓うようになる。",
+        usage_note: "エクストラカードならではの強さを持ち，護符まで得られる優れたクリーチャー．一度は使ってみたいカード．"
+    },
 ];
 
 // --- マップ攻略メモデータ ---
 let maps = [
-  { id: 1, map_name: 'アトラ', target_g: 6000, structure: '8の字型', element_trend: '火と地が多い', recommended_card: 'デコイ', strategy: '属性対策が必須。高額領地に注意。' },
-  { id: 2, map_name: 'ビザンチウム', target_g: 8000, structure: '環状線', element_trend: '水属性有利', recommended_card: 'アイスウォール', strategy: '周回が早いので移動系スペルを入れる。' }
+  { 
+      id: 1, 
+      work: "カルドセプト セカンド エキスパンション",
+      map_name: '出会いの地デュナン', 
+      target_g: 5000, 
+      structure: '正方形', 
+      element_trend: '火・水・地・風属性の土地が４つずつ均等に配置されているマップ', 
+      recommended_card: 'デコイ', 
+      strategy: '単色ブックではなく，複数の属性を使うと立ち回りやすい' 
+  },
+  { 
+      id: 2, 
+      work: "カルドセプト セカンド エキスパンション",
+      map_name: '王都マルセスブルク', 
+      target_g: 6000, 
+      structure: '八の字', 
+      element_trend: '火・地属性のブックが若干有利', 
+      recommended_card: 'ストーンウォール', 
+      strategy: '周回が早いので移動系スペルを入れる。' 
+  },
+  { 
+      id: 3, 
+      work: "カルドセプト セカンド エキスパンション",
+      map_name: '神の降り立つ山アトラ', 
+      target_g: 8000, 
+      structure: '八の字', 
+      element_trend: '水・風属性のブックが若干有利', 
+      recommended_card: 'イエティ', 
+      strategy: 'マップが広い割に塔が一つしかないため，魔力配分を考える必要がある' 
+  },
+  { 
+      id: 4, 
+      work: "カルドセプト セカンド エキスパンション",
+      map_name: '雪原の炭坑ラビド', 
+      target_g: 8000, 
+      structure: 'バツ型のエリアと丸型のエリア', 
+      element_trend: '無属性の土地がいくつかあるため，好きな属性で挑める', 
+      recommended_card: 'コアティ', 
+      strategy: '護符などの特殊地形も多くあるため，戦略を練って挑むと良い' 
+  },
+  { 
+      id: 5, 
+      work: "カルドセプト セカンド エキスパンション",
+      map_name: '賢者の島ダーハン', 
+      target_g: 9000, 
+      structure: 'メインエリアと離れ小島', 
+      element_trend: '火・水・地・風属性の土地が6つずつ均等に配置されているマップ', 
+      recommended_card: 'グーバクイーン', 
+      strategy: '転送マスに止まると離島に飛ばされてしまうため，ワード系スペルを入れておくと良いだろう' 
+  },
+  { 
+      id: 6, 
+      work: "カルドセプト セカンド エキスパンション",
+      map_name: '預言者の神殿２', 
+      target_g: 9000, 
+      structure: '四ヶ所に折り返し通路がある大きな外エリアと小さな内エリアが転送円で結ばれている変則的なマップ', 
+      element_trend: '土地の数はどの属性も数は同じである', 
+      recommended_card: 'ホーリーラマ', 
+      strategy: '逃げ道が多いため，自分の好きなブックで挑みやすい，ワード系のスペルを入れると楽かもしれない' 
+  },
+  { 
+      id: 7, 
+      work: "カルドセプト セカンド エキスパンション",
+      map_name: '錬金術師の館', 
+      target_g: 9000, 
+      structure: '二つの独立したエリアがある', 
+      element_trend: 'マップ全てが無属性のマップ', 
+      recommended_card: 'テレグノーシス', 
+      strategy: '全ての土地が無属性なため，色変えスペルは使わなくても良いだろう' 
+  },
+  { 
+      id: 8, 
+      work: "カルドセプト セカンド エキスパンション",
+      map_name: '燃える街クアンゼ', 
+      target_g: 9000, 
+      structure: '南エリアと西と東のエリアに別れている，西か東どちらかを通れば良い', 
+      element_trend: '火・水属性のブックが有利', 
+      recommended_card: 'リコール', 
+      strategy: '火・水属性の土地が圧倒的に多いため，どちらかの属性に絞ってブックを組むと良い' 
+  },
+  { 
+      id: 9, 
+      work: "カルドセプト セカンド エキスパンション",
+      map_name: '聖地プロムスデル', 
+      target_g: 10000, 
+      structure: '外エリアと内エリアに分かれている', 
+      element_trend: '火・水・地・風属性の土地が6つずつ均等に配置されているマップ', 
+      recommended_card: 'ホーリーワード系', 
+      strategy: '土地属性の下チャリがなくどんなクリーチャーでも力を発揮できるマップ' 
+  },
 ];
 
-// --- 歴代作レビューデータ ---
+// --- 歴代作レビューデータ -
 let reviews = [
-  { id: 1, title: 'カルドセプト セカンド', hardware: 'Dreamcast', release_year: 2001, score: 95, review_title: 'シリーズ最高傑作', comment: 'ゲームバランス、ストーリー、音楽、すべてが完璧。' },
-  { id: 2, title: 'カルドセプト サーガ', hardware: 'Xbox 360', release_year: 2006, score: 70, review_title: 'バグがなければ...', comment: 'グラフィックは綺麗だが、進行不能バグなどが多く惜しい作品。' }
-];
-
+  { 
+    id: 1, 
+    title: 'カルドセプト', 
+    hardware: 'SEGA Saturn', 
+    release_year: 1997, 
+    score: 70, 
+    review_title: '伝説の始まり', 
+    comment: 'すべての原点。当時は類を見ない画期的なルールで、多くのゲーマーを寝不足にさせた。' 
+  },
+  { 
+    id: 2, 
+    title: 'カルドセプト エキスパンション', 
+    hardware: 'PlayStation', 
+    release_year: 1999, 
+    score: 78, 
+    review_title: '遊びやすくなった普及版', 
+    comment: 'サターン版をベースにマップやカードを追加。PSユーザーへの認知を広げた一作。' 
+  },
+  { 
+    id: 3, 
+    title: 'カルドセプト セカンド', 
+    hardware: 'Dreamcast', 
+    release_year: 2001, 
+    score: 80, 
+    review_title: 'シリーズ最高傑作の呼び声', 
+    comment: 'ゲームバランス、ストーリー、音楽、すべてが完璧。DCというハードの特性を活かしたネットワーク対戦も熱かった。' 
+  },
+  { 
+    id: 4, 
+    title: 'カルドセプト セカンド エキスパンション', 
+    hardware: 'PlayStation 2', 
+    release_year: 2002, 
+    score: 100, 
+    review_title: '完成されたバランス', 
+    comment: 'セカンドの更なる調整版。カード枚数の増加と絶妙なバランス調整で、長く遊ばれ続ける決定版。' 
+  },
+  { 
+    id: 5, 
+    title: 'カルドセプト サーガ', 
+    hardware: 'Xbox 360', 
+    release_year: 2006, 
+    score: 73, 
+    review_title: '美麗なグラフィックと惜しいバグ', 
+    comment: 'ハイデフ化された映像とクリーチャーデザインは圧巻。ただし発売初期のバグやテンポの悪さが評価を分けた。' 
+  },
+  { 
+    id: 6, 
+    title: 'カルドセプト DS', 
+    hardware: 'Nintendo DS', 
+    release_year: 2008, 
+    score: 79, 
+    review_title: '携帯機との奇跡的な相性', 
+    comment: '「いつでもどこでもカルドセプト」を実現。通信対戦の敷居を下げ、高速化されたテンポも好評。' 
+  },
+  { 
+    id: 7, 
+    title: 'カルドセプト (3DS)', 
+    hardware: 'Nintendo 3DS', 
+    release_year: 2012, 
+    score: 81, 
+    review_title: '王道の帰還', 
+    comment: 'セカンドのシステムをベースにしつつ、現代風にリファイン。初心者にも優しい協力プレイなどが実装された。' 
+  },
+  { 
+    id: 8, 
+    title: 'カルドセプト リボルト', 
+    hardware: 'Nintendo 3DS', 
+    release_year: 2016, 
+    score: 90, 
+    review_title: 'スピーディーな進化作', 
+    comment: 'システムを大幅に刷新。試合時間の短縮や攻撃的なルール変更は賛否あったが、新しい戦略性を生み出した。' 
+  }
+]
 
 // ==================================================
 // 2. ルーティング
